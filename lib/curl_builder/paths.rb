@@ -41,7 +41,7 @@ module CurlBuilder
     end
 
     def result_include_dir(name)
-      File.join result_dir, name, "include"
+      File.join result_dir, name, "include", "curl"
     end
 
     def packed_lib_path_with(name)
