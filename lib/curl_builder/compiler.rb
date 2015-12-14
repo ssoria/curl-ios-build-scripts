@@ -160,7 +160,7 @@ module CurlBuilder
     def make(architecture)
       debug { "Compiling..." }
       Dir.chdir(expanded_archive_dir) do
-        setup(:verbose) ? system("make && make install") : `make &>/dev/null && make install &>/dev/null`
+        setup(:verbose) ? system("make -j && make install") : `make -j &>/dev/null && make install &>/dev/null`
       end
 
       warn { "Compilation for architecture '#{param(architecture)}' failed." } unless $?.success?
