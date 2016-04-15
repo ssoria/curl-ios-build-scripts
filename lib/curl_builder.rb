@@ -37,14 +37,16 @@ module CurlBuilder
     "file"   => false,
     "ldap"   => false,
     "ldaps"  => false,
-    "rtsp"   => false,
     "dict"   => false,
     "telnet" => false,
     "tftp"   => false,
     "pop3"   => false,
     "imap"   => false,
     "smtp"   => false,
-    "gopher" => false
+    "gopher" => false,
+
+    # not really a protocol, but uses the "--enable-" prefix
+    "threaded-resolver" => true,
   }
 
   DEFAULT_FLAGS = {
@@ -61,9 +63,9 @@ module CurlBuilder
     verbose:            false,
     debug_symbols:      false,
     curldebug:          false,
-    sdk_version:        "9.2",
+    sdk_version:        "9.3",
     osx_sdk_version:    "10.11",
-    libcurl_version:    "7.46.0",
+    libcurl_version:    "7.48.0",
     architectures:      %w(i386 armv7 armv7s arm64 x86_64),
     xcode_home:         "/Applications/Xcode.app/Contents/Developer",
     run_on_dir:         Dir::pwd,

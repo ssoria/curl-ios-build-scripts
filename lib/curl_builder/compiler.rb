@@ -154,6 +154,7 @@ module CurlBuilder
       end
 
       warn { "Configuration for architecture '#{param(architecture)}' failed." } unless $?.success?
+      exit unless $?.success?
       $?.success?
     end
 
