@@ -63,10 +63,11 @@ module CurlBuilder
     verbose:            false,
     debug_symbols:      false,
     curldebug:          false,
-    sdk_version:        "9.3",
-    osx_sdk_version:    "10.11",
-    libcurl_version:    "7.48.0",
-    architectures:      %w(i386 armv7 armv7s arm64 x86_64),
+    sdk_version:        `echo $iOS_SDK_VERSION`.strip,
+    osx_sdk_version:    `echo $OSX_SDK_VERSION`.strip, #none for iPhoneSimulator
+    libcurl_version:    `echo $LIB_CURL_VERSION`.strip,#"7.56.0",
+    architectures:      %w(armv7 arm64 i386 x86_64),
+    bitcode:            true,
     xcode_home:         "/Applications/Xcode.app/Contents/Developer",
     run_on_dir:         Dir::pwd,
     work_dir:           "build",
@@ -75,7 +76,7 @@ module CurlBuilder
     cleanup:            true,
   }
 
-  VALID_ARGS = {architectures: %w(i386 armv7 armv7s arm64 x86_64)}
+  VALID_ARGS = {architectures: %w(armv7 arm64 i386 x86_64)}
 
 
   attr_accessor :logger

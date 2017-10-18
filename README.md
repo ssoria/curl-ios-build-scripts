@@ -1,3 +1,15 @@
+Usage
+========
+Run `./build_curl_framework.sh`
+
+Feature
+========
+Config and using `build_curl_framework.sh` to build iOS Framework
+> `LIB_CURL_VERSION`="7.56.0" //version you want to build
+>
+> `OSX_SDK_VERSION`="none" #none for iPhoneSimulator
+
+
 Curl build utility for iOS and OSX
 ==================================
 
@@ -7,7 +19,7 @@ Script to build curl for iOS 5+ and OSX 10.7+. Supports:
 - iPhoneSimulator (i386-sim)
 - newer iPhones/iPads/iPods (arm v7/7s)
 
-Curl version `7.27.0` and above now supports native (Darwin) SSL so the other alternatives (GnuTLS and OpenSSL) have been removed. The script now compiles `libcurl.a` with SSL support at no additional binary size (yay!).
+Curl version `7.56.0` and above now supports native (Darwin) SSL so the other alternatives (GnuTLS and OpenSSL) have been removed. The script now compiles `libcurl.a` with SSL support at no additional binary size (yay!).
 
 To list all possible options and flags, run `./build_curl --help`.
 
